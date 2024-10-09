@@ -29,17 +29,17 @@ public class Servicio {
     //metodo para llenar la matriz
     public void registrarTemperatura (int mes,int anio,double temperatura){
         int aux= anio-this.anioInicio;
-        temperaturas[aux][mes-1]=temperatura;
+        temperaturas[aux][mes]=temperatura;
     }
     
     public double devolverTemperatura(int mes,int anio){
         double aux;
         int aux1= anio-this.anioInicio;
-        aux=temperaturas[aux1][mes-1];
+        aux=temperaturas[aux1][mes];
         return aux;
     }
     
-    public String temperaturaMaxSteel(){
+    public String temperaturaMax(){
         String aux;
         double maxT=-1;
         Integer maxM=-1,maxA=-1;
@@ -60,9 +60,9 @@ public class Servicio {
         String aux2=estacion.toString();
         this.promAnios=new double [this.aniosConsecutivos];
         double aux;//suma todas las temperaturas
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < this.aniosConsecutivos; i++) {
             aux=0.0;
-            for (int j = 0; j < 10; j++) {
+            for (int j = 0; j < 12; j++) {
                 aux+=this.temperaturas[i][j];
             }
             aux2+=" En el anio:" + (i+this.anioInicio)+" temperatura: "+(aux/12)+" \n";
@@ -70,7 +70,18 @@ public class Servicio {
         return aux2;
     }
     
-    public void calcularPromedioXmes(){
+    public String calcularPromedioXmes(){
+        String aux2=estacion.toString();
+        this.promAnios=new double [this.aniosConsecutivos];
+        double aux;//suma todas las temperaturas
+        for (int i = 0; i < 12; i++) {
+            aux=0.0;
+            for (int j = 0; j < this.aniosConsecutivos; j++) {
+                aux+=this.temperaturas[j][i];
+            }
+            aux2+=" En este mes" + (i)+" temperatura: "+(aux/this.aniosConsecutivos)+" \n";
+        }
+        return aux2;
         
     }
     

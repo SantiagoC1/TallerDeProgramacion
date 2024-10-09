@@ -5,17 +5,14 @@
  */
 package practicastaller2024.Objects.Meteorologos;
 
-/**
- *
- * @author 1cace
- */
+
 public class EstacionMeteorologica {
     private String nombre;
-    private Integer longitud;
-    private Integer latitud;
+    private double longitud;
+    private double latitud;
     
 
-    public EstacionMeteorologica(String nombre, Integer longitud, Integer latitud) {
+    public EstacionMeteorologica(String nombre, double longitud, double latitud) {
         this.nombre = nombre;
         this.longitud = longitud;
         this.latitud = latitud;
@@ -29,20 +26,25 @@ public class EstacionMeteorologica {
         this.nombre = nombre;
     }
 
-    public Integer getLongitud() {
+    public double getLongitud() {
         return longitud;
     }
 
-    public void setLongitud(Integer longitud) {
+    public void setLongitud(double longitud) {
         this.longitud = longitud;
     }
 
-    public Integer getLatitud() {
+    public double getLatitud() {
         return latitud;
     }
 
-    public void setLatitud(Integer latitud) {
+    public void setLatitud(double latitud) {
         this.latitud = latitud;
+    }
+
+    @Override
+    public String toString() {
+        return "EstacionMeteorologica{" + nombre + ", longitud(" + longitud + ") - latitud(" + latitud + ')';
     }
     
     

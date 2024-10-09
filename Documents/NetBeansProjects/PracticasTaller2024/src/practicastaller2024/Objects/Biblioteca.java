@@ -4,6 +4,7 @@
  */
 package practicastaller2024.Objects;
 
+import practicastaller2024.Objects.Estanteria.Libro;
 import PaqueteLectura.Lector;
 
 /**
